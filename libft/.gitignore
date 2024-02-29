@@ -1,0 +1,19 @@
+# exec files
+*a.exe
+*a.out
+
+# main
+
+*main.c*
+
+# vscode
+
+.vscode
+
+# .so
+
+*libft.so
+
+# tester
+
+*tester*

@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   puterror.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 16:21:08 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/03/04 17:45:39 by bkwamme          ###   ########.fr       */
+/*   Created: 2024/03/04 16:21:02 by bkwamme           #+#    #+#             */
+/*   Updated: 2024/03/04 16:32:58 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void ft_puterror(void)
 {
-	t_stack *a;
-	t_stack *b;
-
-	a = NULL;
-	b = NULL;
-	if (arg_val(argv) == 1);
-		return (1);
-	//stack_fill(**argv, argc, a);
-	return 0;
+	write(0, "Error\n", 6);
 }

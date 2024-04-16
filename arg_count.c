@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   arg_count.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/03/26 17:35:44 by bkwamme          ###   ########.fr       */
+/*   Created: 2024/03/26 17:28:21 by bkwamme           #+#    #+#             */
+/*   Updated: 2024/03/26 17:52:30 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-//libs
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/includes/ft_printf.h"
-# include "libft/includes/libft.h"
-//stack
-typedef struct s_stack
+int arg_count (char **argv)
 {
-	struct s_list	*next;
-	void			*content;
-}	t_stack;
+	int	i;
 
-size_t stack_fill(char *args,  int argc, t_list *a);
-int arg_val(char **argv);
-int	check_spaces(char c);
-void ft_puterror(void);
+	i = 0;
+	while (argv[1][i] != '\0')
+	{
+		if (check_spaces(argv[1][i]) == 0)
+			i++;
+		else if (ft_isalnum(argv[1][i] == 0 )
 
-#endif
+	}
+}

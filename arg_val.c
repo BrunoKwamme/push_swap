@@ -6,47 +6,37 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/03/26 17:51:55 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/21 16:40:24 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_duplicates(char **argv)
+static int	check_chars(char c)
+{
+	if (check_spaces(c) != 1 || ft_isdigit(c) != 1 || check_signal(c) != 1)
+		return (0);
+	return (1);
+}
+
+static int	check_args(char **argv)
 {
 	int	i;
 	int	cmp;
 
-	i = 1;
+	i = 0;
 	cmp = 0;
-	while (argv[1][i] != '\0' || argv[1][cmp] != '\0')
+	while (argv[cmp] != '\0')
 	{
-		if (argv[1][i] == argv[1][cmp] && check_spaces(argv[1][i]) != 0)
+		if (check_chars(argv[cmp][i]) == 0)
 		{
 			ft_puterror();
 			return (1);
 		}
-		if (argv[1][i] == '\0')
+		if (argv[cmp][i] == '\0')
 		{
 			cmp++;
-			i = cmp + 1;
-		}
-		i++;
-	}
-	return (0);
-}
-
-static int	check_chars(char **argv)
-{
-	int	i;
-
-	i = 0;
-	while (argv[1][i] != '\0')
-	{
-		if (ft_isalnum(argv[1][i]) ==  1 && check_spaces(argv[1][i]) == 1)
-		{
-			ft_puterror();
-			return (1);
+			i = 0;
 		}
 		i++;
 	}

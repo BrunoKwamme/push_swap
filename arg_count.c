@@ -6,13 +6,13 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:28:21 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/03/26 17:52:30 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/20 18:48:33 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int arg_count (char **argv)
+int  (char **argv)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ int arg_count (char **argv)
 	{
 		if (check_spaces(argv[1][i]) == 0)
 			i++;
-		else if (ft_isalnum(argv[1][i] == 0 )
+		//else if	(ft_isalnum(argv[1][i] == 0 )
 
 	}
 }

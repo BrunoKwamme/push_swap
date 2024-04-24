@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/03/26 17:35:44 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/24 02:56:10 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,16 @@ typedef struct s_stack
 {
 	struct s_list	*next;
 	void			*content;
+	int				i;
 }	t_stack;
 
 size_t stack_fill(char *args,  int argc, t_list *a);
+long	ft_atol(const char *nptr);
+int	*arr_cat(int *dest, int *src);
+int	check_dup_num(int *arr);
+int	arr_val(int *array);
+int	check_overflow(int *arr);
+int arr_len(int *array);
 int arg_val(char **argv);
 int	check_spaces(char c);
 void ft_puterror(void);

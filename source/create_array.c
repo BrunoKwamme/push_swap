@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:15:20 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:34:03 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 
 int arr_len(long *array)

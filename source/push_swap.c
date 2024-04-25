@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:08 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 18:16:26 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:15:48 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 void print_stack(t_stack *a)
 {

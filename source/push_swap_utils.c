@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:36:03 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 15:21:09 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:15:41 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 int	check_spaces(char c)
 {

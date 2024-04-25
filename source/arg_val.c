@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 18:03:35 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:15:12 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 static int	check_chars(char **arg)
 {

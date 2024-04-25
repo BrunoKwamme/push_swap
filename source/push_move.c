@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:56:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 18:05:29 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:15:35 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 void pa(t_stack **a, t_stack **b)
 {

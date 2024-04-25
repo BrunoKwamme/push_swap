@@ -1,0 +1,29 @@
+NAME = push_swap
+
+RM = rm -f
+COMPILER = cc -Wall -Wextra -Werror
+DIR_SRCS = source/
+LIBFT_A = libft/libft.a
+
+GET_SRCS = $(shell find $(DIR_SRCS))
+
+FILTER_SRCS = $(filter %.c, $(GET_SRCS))
+
+OBJS = $(FILTER_SRCS:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS) $(LIBFT_A)
+	$(COMPILER) $(OBJS) $(LIBFT_A) -o $(NAME)
+
+.c.o:
+	$(COMPILER) -c $< -o $@ -I $(DIR_INCLUDES)
+
+clean:
+	$(RM) $(OBJS)
+	cd libft && make clean && cd ..
+
+fclean: clean
+	$(RM) $(NAME) $(LIBFT_A)
+
+re: fclean all

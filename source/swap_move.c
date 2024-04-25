@@ -6,11 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:01:57 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 18:20:17 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:16:04 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 void	sa(t_stack **a)
 {
@@ -48,12 +48,7 @@ void	sb(t_stack **b)
 
 void	ss(t_stack **a, t_stack **b)
 {
-	int	a_size;
-	int	b_size;
-
-	a_size = stack_size(*a);
-	b_size = stack_size(*b);
-	if (a_size < 2 || b_size < 2)
+	if (stack_size(*a) < 2 || stack_size(*b) < 2)
 		return ;
 	sa(a);
 	sb(b);

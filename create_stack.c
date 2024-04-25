@@ -1,22 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_fill.c                                       :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 10:31:29 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 14:24:47 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*stack_fill (t_stack *a, int *arg_arr)
+void	create_stack(t_stack **stack, long *arr)
+{
+	int array_len;
+	int	i;
+	t_stack	*a;
+	t_stack *swap;
+
+
+	swap = NULL;
+	array_len = arr_len(arr);
+	i = 0;
+	while (i < array_len)
+	{
+		a = ft_calloc(sizeof(t_stack), 1);
+		a->data = arr[i];
+		a->next = swap;
+		swap = a;
+		i++;
+	}
+	*stack = a;
+}
+/*
+t_stack	stack_fill (int *arg_arr)
 {
 	int	i;
 	int	arg_len;
+	t_stack	*a;
 
+	a = NULL;
 	arg_len = arr_len(arg_arr);
 	i = 0;
 	while(i < arr_len(arg_arr))
@@ -24,9 +48,11 @@ t_list	*stack_fill (t_stack *a, int *arg_arr)
 		a = ft_calloc(sizeof(t_stack), 1);
 		a = ft_lstnew(&arg_arr[i]);
 		a->data = arg_arr[arg_len];
-		a->i = raddix_i(arg_arr);
+		a->i = 3;//raddix_i(arg_arr);
+		a->next = NULL;
 		i++;
 	}
+	return (a);
 }
 
 int	raddix_i(int *array)
@@ -54,12 +80,4 @@ int	raddix_i(int *array)
 		}
 		i++;
 	}
-}
-
-int main()
-
-{
-	int vec = {2, 1, 9, 10};
-
-	return 0;
-}
+}*/

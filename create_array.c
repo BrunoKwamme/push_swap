@@ -6,22 +6,14 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/24 16:10:50 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 13:27:58 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	arr_val(int *array)
-{
-	if (!array)
-		return (1);
-	if (check_overflow(array) == 1 || check_dup_num(array) == 1)
-		return (1);
-	return (0);
-}
 
-int arr_len(int *array)
+int arr_len(long *array)
 {
 	int	i;
 
@@ -33,17 +25,17 @@ int arr_len(int *array)
 	return (i);
 }
 
-int	*arr_cat(int *dest, int *src)
+long	*arr_cat(long *dest, long *src)
 {
 	int	dest_len;
 	int	src_len;
 	int	i;
-	int	*new_array;
+	long	*new_array;
 
 	i = 0;
 	dest_len = (arr_len(dest));
 	src_len = (arr_len(src));
-	new_array = ft_calloc(sizeof(int), src_len + dest_len + 1);
+	new_array = ft_calloc(sizeof(long), src_len + dest_len + 1);
 	if (!new_array)
 		return(NULL);
 	while (i < dest_len)
@@ -63,18 +55,19 @@ int	*arr_cat(int *dest, int *src)
 	return (new_array);
 }
 
-int	*create_array(char **splitted_args)
+long	*create_array(char **splitted_args)
 {
 	int	i;
+	long	l;
 	int	arg_len;
-	int	*arg_arr;
+	long	*arg_arr;
 
 	arg_arr = NULL;
 	arg_len = 0;
 	i = 0;
 	while (splitted_args[arg_len] != NULL)
 		arg_len++;
-	arg_arr = ft_calloc((arg_len + 1), sizeof(int));
+	arg_arr = ft_calloc((arg_len + 1), sizeof(long));
 	if (!arg_arr)
 		return (NULL);
 	while (arg_len > i)
@@ -98,11 +91,11 @@ void free_splitted_args(char **splitted_args)
 	free(splitted_args);
 }
 
-int	*arg_into_array(char	**argv, int argc)
+long	*arg_into_array(char	**argv, int argc)
 {
 	char	**splitted_args;
-	int		*arr_to_cat;
-	int		*arg_arr;
+	long		*arr_to_cat;
+	long		*arg_arr;
 	int		i;
 
 	splitted_args = NULL;
@@ -124,31 +117,3 @@ int	*arg_into_array(char	**argv, int argc)
 	}
 	return (arg_arr);
 }
-
-int main(int argc, char **argv)
-{
-	int *arr;
-	arr = NULL;
-	arr = arg_into_array(argv, argc);
-	ft_printf("%p", arr);
-	free(arr);
-	return 0;
-}
-/*
-
-int main (int argc, char **argv)
-{
-	#include<stdio.h>
-	int	i;
-	int	*arr;
-
-	arr = arg_into_array(argv, argc);
-	i = 0;
-	while (i < 4)
-	{
-		printf("%i", arr[i]);
-		i++;
-	}
-	free(arr);
-	return (0);
-}*/

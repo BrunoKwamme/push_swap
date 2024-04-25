@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   support.c                                          :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:36:03 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/24 02:35:39 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 15:21:09 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 int	check_spaces(char c)
 {
-	if (c == 32 || (c >= 7 && c <= 13))
-		return (0);
-	return (1);
+	if (c == ' ')
+		return (1);
+	return (0);
+}
+
+int check_signal (char c)
+{
+	if (c == '-' || c == '+')
+		return (1);
+	return (0);
 }
 
 void ft_puterror(void)
 {
 	write(0, "Error\n", 6);
 }
-
-
 
 long	ft_atol(const char *nptr)
 {
@@ -53,4 +58,17 @@ long	ft_atol(const char *nptr)
 	if (m == 1)
 		return (-atol);
 	return (atol);
+}
+
+int	stack_size(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }

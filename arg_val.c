@@ -6,31 +6,24 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/24 02:37:47 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 18:03:35 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int check_signal (char c)
-{
-	if (c == '-' || c == '+')
-		return (1);
-	return (0);
-}
 
 static int	check_chars(char **arg)
 {
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	j = 0;
 	while (arg[i] != NULL)
 	{
-		while (*arg[j] != '\0')
+		while (arg[i][j] != '\0')
 		{
-			if (check_spaces(*arg[j]) != 1 || ft_isdigit(*arg[j]) != 1 || check_signal(*arg[j]) != 1)
+			if (check_spaces(arg[i][j]) != 1 || ft_isdigit(arg[i][j]) != 1 || check_signal(arg[i][j]) != 1)
 				return (0);
 			j++;
 		}
@@ -40,7 +33,7 @@ static int	check_chars(char **arg)
 	return (1);
 }
 
-int	check_dup_num(int *arr)
+static int	check_dup_num(long *arr)
 {
 	int	i;
 	int bubble;
@@ -55,22 +48,26 @@ int	check_dup_num(int *arr)
 		i++;
 		if (arr[i] == '\0')
 		{
-			i = bubble;
 			bubble++;
+			i = bubble + 1;
 		}
 	}
 	return (1);
 }
 
-int	check_overflow(int *arr)
+static int	check_overflow(long *arr)
 {
 	int	i;
+	int x;
 
+	x = 0;
 	i = 0;
 	while (arr[i] != '\0')
 	{
 		if (arr[i] > 2147483647 || arr[i] < -2147483648)
+		{
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -78,12 +75,16 @@ int	check_overflow(int *arr)
 
 int arg_val(char **argv)
 {
-	if (!argv[1])
-	{
-		ft_puterror();
-		return (1);
-	}
 	if (check_chars(argv) == 1)
 		return (1);
+	return (0);
+}
 
+int	array_val(long *arr)
+{
+	if (!arr)
+		return (1);
+	if (check_overflow(arr) == 0 || check_dup_num(arr) == 0)
+		return (1);
+	return (0);
 }

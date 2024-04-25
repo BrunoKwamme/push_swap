@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:34:03 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:36:57 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ long	*arr_cat(long *dest, long *src)
 long	*create_array(char **splitted_args)
 {
 	int	i;
-	long	l;
 	int	arg_len;
 	long	*arg_arr;
 

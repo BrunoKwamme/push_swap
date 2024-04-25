@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:33:51 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:37:27 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ static int	check_dup_num(long *arr)
 static int	check_overflow(long *arr)
 {
 	int	i;
-	int x;
-
-	x = 0;
+	
 	i = 0;
 	while (arr[i] != '\0')
 	{

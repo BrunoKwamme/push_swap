@@ -17,6 +17,9 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT_A)
 	$(COMPILER) $(OBJS) $(LIBFT_A) -o $(NAME)
 
+$(LIBFT_A):
+	cd libft && make && cd ..
+
 .c.o:
 	$(COMPILER) -c $< -o $@ -I $(DIR_INCLUDES)
 

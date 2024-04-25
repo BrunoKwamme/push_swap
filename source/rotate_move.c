@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:55:47 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:34:28 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:38:15 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rr(t_stack **a, t_stack **b)
 	ra(a);
 	rb(b);
 }
-
+/*
 void	rra(t_stack **a)
 {
 	t_stack *last;
@@ -71,3 +71,4 @@ void	rra(t_stack **a)
 	swap = (*a)->next;
 	(*a) = last;
 }
+*/

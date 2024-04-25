@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 18:19:06 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:36:06 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define PUSH_SWAP_H
 
 //libs
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/includes/ft_printf.h"
-# include "libft/includes/libft.h"
+# include "../libft/includes/ft_printf.h"
+# include "../libft/includes/libft.h"
 //stack
 typedef struct s_stack
 {

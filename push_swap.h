@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/24 02:56:10 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:18:10 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 typedef struct s_stack
 {
 	struct s_list	*next;
-	void			*content;
-	int				i;
+	int			data;
+	int			i;
 }	t_stack;
 
 size_t stack_fill(char *args,  int argc, t_list *a);

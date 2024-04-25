@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/24 02:56:18 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/24 16:10:50 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	arr_val(int *array)
 {
+	if (!array)
+		return (1);
 	if (check_overflow(array) == 1 || check_dup_num(array) == 1)
 		return (1);
 	return (0);
@@ -24,7 +26,9 @@ int arr_len(int *array)
 	int	i;
 
 	i = 0;
-	while (array[i] != '\0')
+	if (!array)
+		return (0);
+	while (array[i])
 		i++;
 	return (i);
 }
@@ -70,7 +74,7 @@ int	*create_array(char **splitted_args)
 	i = 0;
 	while (splitted_args[arg_len] != NULL)
 		arg_len++;
-	arg_arr = malloc((arg_len + 1) * sizeof(int));
+	arg_arr = ft_calloc((arg_len + 1), sizeof(int));
 	if (!arg_arr)
 		return (NULL);
 	while (arg_len > i)
@@ -81,6 +85,19 @@ int	*create_array(char **splitted_args)
 	return (arg_arr);
 }
 
+void free_splitted_args(char **splitted_args)
+{
+	int	i;
+
+	i = 0;
+	while (splitted_args[i] != NULL)
+	{
+		free(splitted_args[i]);
+		i++;
+	}
+	free(splitted_args);
+}
+
 int	*arg_into_array(char	**argv, int argc)
 {
 	char	**splitted_args;
@@ -88,6 +105,7 @@ int	*arg_into_array(char	**argv, int argc)
 	int		*arg_arr;
 	int		i;
 
+	splitted_args = NULL;
 	arr_to_cat = NULL;
 	arg_arr = NULL;
 	i = 1;
@@ -101,14 +119,26 @@ int	*arg_into_array(char	**argv, int argc)
 			arr_to_cat = create_array(splitted_args);
 			arg_arr = arr_cat(arg_arr, arr_to_cat);
 		}
-		free(splitted_args);
+		free_splitted_args(splitted_args);
 		i++;
 	}
 	return (arg_arr);
 }
 
+int main(int argc, char **argv)
+{
+	int *arr;
+	arr = NULL;
+	arr = arg_into_array(argv, argc);
+	ft_printf("%p", arr);
+	free(arr);
+	return 0;
+}
+/*
+
 int main (int argc, char **argv)
 {
+	#include<stdio.h>
 	int	i;
 	int	*arr;
 
@@ -116,9 +146,9 @@ int main (int argc, char **argv)
 	i = 0;
 	while (i < 4)
 	{
-		ft_printf("%i", arr[i]);
+		printf("%i", arr[i]);
 		i++;
 	}
 	free(arr);
 	return (0);
-}
+}*/

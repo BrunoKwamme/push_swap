@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 16:12:02 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 16:49:25 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	check_chars(char **arg)
 						|| arg[i][j + 1] == '\0'))
 				flag++;
 			if (arg[i][j] != ' ' && ft_isdigit(arg[i][j]) != 1
-					&& (arg[i][j] != '+' || arg[i][j] != '-'))
+					&& (arg[i][j] != '+' && arg[i][j] != '-'))
 				return (-1);
 			j++;
 		}

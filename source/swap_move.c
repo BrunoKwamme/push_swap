@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:01:57 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 15:02:57 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:23:21 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sb(t_stack **b)
 		*b = (*b)->next;
 		swap->next = (*b)->next;
 		(*b)->next = swap;
-		ft_printf("pb\n");
+		ft_printf("sb\n");
 	}
 }
 
@@ -54,4 +54,5 @@ void	ss(t_stack **a, t_stack **b)
 		return ;
 	sa(a);
 	sb(b);
+	ft_printf("ss\n");
 }

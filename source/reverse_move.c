@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:21:54 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 15:01:57 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:24:26 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ void	rrr(t_stack **a, t_stack **b)
 		return ;
 	rra(a);
 	rrb(b);
+	ft_printf("rrr\n");
 }

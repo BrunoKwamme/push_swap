@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:36:06 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 20:24:02 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,11 @@ void	pb(t_stack **a, t_stack **b);
 //rotate_move
 void	ra(t_stack **a);
 void 	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+//reverse_move
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
 
 #endif

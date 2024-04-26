@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:08 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:34:20 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 20:24:50 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	}
 	create_stack(&a, arr);
 	create_stack(&b, arr);
-	ss(&a, &b);
+	rrr(&a, &b);
 	print_stack(a);
 	print_stack(b);
 	free(arr);

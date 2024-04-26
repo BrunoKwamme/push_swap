@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:56:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:34:12 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/25 23:42:19 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void pa(t_stack **a, t_stack **b)
 	*a = *b;
 	*b = (*b)->next;
 	(*a)->next = swap;
+	ft_printf("pa\n");
 }
 
 void pb(t_stack **a, t_stack **b)
@@ -36,4 +37,5 @@ void pb(t_stack **a, t_stack **b)
 	*b = *a;
 	*a = (*a)->next;
 	(*b)->next = swap;
+	ft_printf("pb\n");
 }

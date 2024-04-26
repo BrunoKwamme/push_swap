@@ -1,7 +1,7 @@
 NAME = push_swap
 
 RM = rm -f
-COMPILER = cc -Wall -Wextra -Werror
+COMPILER = clang -g -Wall -Wextra -Werror
 DIR_SRCS = source/
 DIR_INCLUDES = includes/
 LIBFT_A = libft/libft.a

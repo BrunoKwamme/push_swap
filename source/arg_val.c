@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 19:37:27 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 06:11:09 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,25 @@ static int	check_chars(char **arg)
 {
 	int	i;
 	int	j;
+	int	flag;
 
+	flag = 0;
 	i = 1;
 	j = 0;
 	while (arg[i] != NULL)
 	{
 		while (arg[i][j] != '\0')
 		{
-			if (check_spaces(arg[i][j]) != 1 || ft_isdigit(arg[i][j]) != 1 || check_signal(arg[i][j]) != 1)
-				return (0);
+			if (ft_isdigit(arg[i][j]) == 1 && (arg[i][j + 1] == ' ' || arg[i][j + 1] == '\0'))
+				flag++;
+			if (arg[i][j] != ' ' && ft_isdigit(arg[i][j]) != 1 && check_signal(arg[i][j]) != 1)
+				return (-1);
 			j++;
 		}
 		i++;
 		j = 0;
 	}
-	return (1);
+	return (flag);
 }
 
 static int	check_dup_num(long *arr)
@@ -58,7 +62,7 @@ static int	check_dup_num(long *arr)
 static int	check_overflow(long *arr)
 {
 	int	i;
-	
+
 	i = 0;
 	while (arr[i] != '\0')
 	{
@@ -73,9 +77,12 @@ static int	check_overflow(long *arr)
 
 int arg_val(char **argv)
 {
-	if (check_chars(argv) == 1)
-		return (1);
-	return (0);
+	int	arr_len;
+
+	arr_len = check_chars(argv);
+	if (arr_len < 0)
+		return (-1);
+	return (arr_len);
 }
 
 int	array_val(long *arr)
@@ -86,3 +93,4 @@ int	array_val(long *arr)
 		return (1);
 	return (0);
 }
+

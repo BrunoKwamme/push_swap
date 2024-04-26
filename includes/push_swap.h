@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 20:24:02 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 06:02:14 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,14 @@ int	array_val(long *arr);
 int arr_len(long *array);
 long	*arg_into_array(char	**argv, int argc);
 long	*create_array(char **splitted_args);
-long	*arr_cat(long *dest, long *src);
+long	*arr_cat(long *array, int arg_len, char **splitted_args);
 void free_splitted_args(char **splitted_args);
 //create_stack
-void	create_stack(t_stack **stack, long *arr);
-t_stack	*stack_fill(int *arg_arr);
+void	create_stack(t_stack **stack, long *arr, long *stack_i, int arr_len);
+long	*stack_index(long *array, int arr_len);
+int    is_stack_ordered(t_stack **stack_a);
+int    binary_limit(int r_count);
+void create_stack_b(t_stack **b);
 //swap_move
 void	sa(t_stack **a);
 void	sb(t_stack **a);
@@ -58,6 +61,12 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+//operations
+void	three_nodes(t_stack **a);
+void	five_nodes(t_stack **a, t_stack **b);
+void    more_than_five(t_stack **stack_a, t_stack **stack_b);
+void    order_by_radix(t_stack **stack_a, t_stack **stack_b, int ind);
+
 
 
 #endif

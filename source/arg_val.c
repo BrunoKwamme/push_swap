@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:29 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 06:11:09 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 16:12:02 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ static int	check_chars(char **arg)
 	{
 		while (arg[i][j] != '\0')
 		{
-			if (ft_isdigit(arg[i][j]) == 1 && (arg[i][j + 1] == ' ' || arg[i][j + 1] == '\0'))
+			if (ft_isdigit(arg[i][j]) == 1 && (arg[i][j + 1] == ' '
+						|| arg[i][j + 1] == '\0'))
 				flag++;
-			if (arg[i][j] != ' ' && ft_isdigit(arg[i][j]) != 1 && check_signal(arg[i][j]) != 1)
+			if (arg[i][j] != ' ' && ft_isdigit(arg[i][j]) != 1
+					&& (arg[i][j] != '+' || arg[i][j] != '-'))
 				return (-1);
 			j++;
 		}
@@ -37,45 +39,42 @@ static int	check_chars(char **arg)
 	return (flag);
 }
 
-static int	check_dup_num(long *arr)
+static int	check_dup_num(long *arr, int arr_len)
 {
 	int	i;
-	int bubble;
+	int	bubble;
 
 	bubble = 0;
 	i = 1;
-
-	while (arr[i] != '\0' && arr[bubble] != '\0')
+	while (i < arr_len && bubble < arr_len)
 	{
 		if (arr[bubble] == arr[i])
 			return (0);
-		i++;
-		if (arr[i] == '\0')
+		if (i + 1 == arr_len)
 		{
 			bubble++;
-			i = bubble + 1;
+			i = bubble;
 		}
+		i++;
 	}
 	return (1);
 }
 
-static int	check_overflow(long *arr)
+static int	check_overflow(long *arr, int arr_len)
 {
 	int	i;
 
 	i = 0;
-	while (arr[i] != '\0')
+	while (i < arr_len)
 	{
 		if (arr[i] > 2147483647 || arr[i] < -2147483648)
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (1);
 }
 
-int arg_val(char **argv)
+int	arg_val(char **argv)
 {
 	int	arr_len;
 
@@ -85,12 +84,11 @@ int arg_val(char **argv)
 	return (arr_len);
 }
 
-int	array_val(long *arr)
+int	array_val(long *arr, int arr_len)
 {
 	if (!arr)
 		return (1);
-	if (check_overflow(arr) == 0 || check_dup_num(arr) == 0)
+	if (check_overflow(arr, arr_len) == 0 || check_dup_num(arr, arr_len) == 0)
 		return (1);
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:01:57 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 23:42:42 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:02:57 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_stack **a)
 {
 	t_stack	*swap;
-	int	lst_size;
+	int		lst_size;
 
 	lst_size = stack_size(*a);
 	if (lst_size < 2)
@@ -33,7 +33,7 @@ void	sa(t_stack **a)
 void	sb(t_stack **b)
 {
 	t_stack	*swap;
-	int	lst_size;
+	int		lst_size;
 
 	lst_size = stack_size(*b);
 	if (lst_size < 2)

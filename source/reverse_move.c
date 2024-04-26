@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:21:54 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 23:41:34 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:01:57 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rra(t_stack **a)
 {
-	t_stack *last;
-	t_stack *penultimate;
+	t_stack	*last;
+	t_stack	*penultimate;
 
 	last = NULL;
 	penultimate = NULL;
@@ -35,8 +35,8 @@ void	rra(t_stack **a)
 
 void	rrb(t_stack **b)
 {
-	t_stack *last;
-	t_stack *penultimate;
+	t_stack	*last;
+	t_stack	*penultimate;
 
 	last = NULL;
 	penultimate = NULL;

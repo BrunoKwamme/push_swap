@@ -6,72 +6,76 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:08 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 06:37:09 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:58:18 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void print_stack(t_stack *a)
+void	error_manage(long *a, long *b, t_stack *c, t_stack *d)
 {
-	t_stack *sup;
-	sup = a;
-	while (sup != NULL)
-	{
-		ft_printf("%d\n", sup->data);
-		sup = sup->next;
-	}
+	a = NULL;
+	b = NULL;
+	c = NULL;
+	d = NULL;
 }
 
-void operations_management(t_stack **a, t_stack **b)
+void	operations_management(t_stack **a, t_stack **b)
 {
 	int	a_size;
 
+	if ((*a) == NULL)
+		return ;
 	a_size = stack_size((*a));
 	if (is_stack_ordered(a))
 		return ;
-	if (a_size <= 3)
+	else if (a_size == 2)
+		sa(a);
+	else if (a_size == 3)
 		three_nodes(a);
-	if (a_size > 3 && a_size <= 5)
-	{
-		ft_printf("aaaaaa\n");
+	else if (a_size == 4 || a_size == 5)
 		five_nodes(a, b);
-	}
-	if (a_size > 5)
+	else if (a_size > 5)
 		more_than_five(a, b);
 }
 
-int main(int argc, char **argv)
+void	free_all(t_stack **a, t_stack **b)
+{
+	t_stack	*temp;
+
+	while ((*a))
+	{
+		temp = (*a);
+		(*a) = (*a)->next;
+		free(temp);
+	}
+	if ((*b))
+		free((*b));
+}
+
+int	main(int argc, char **argv)
 {
 	long	*arr;
-	long	*stack_i;
 	int		arr_len;
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
 	arr_len = arg_val(argv);
 	arr = NULL;
-	stack_i = NULL;
-	b = NULL;
 	a = NULL;
-	if (argc < 2 || *argv[1] == '\0' || *argv[1] == ' ')
+	b = NULL;
+	if (argc <= 2 && (*argv[1] == '\0' || (argv[1][0] == ' ' && arr_len == 0)))
 		return (1);
 	if (arr_len < 0)
-	{
-		ft_puterror();
-		return (1);
-	}
-	arr = arg_into_array(argv, argc);
-	stack_i = stack_index(arr, arr_len);
-	if (array_val(arr) == 1)
-	{
-		ft_puterror();
-		free(arr);
-		return (1);
-	}
-	create_stack(&a, arr, stack_i, arr_len);
+		return (ft_puterror(), 1);
+	if (argc == 2)
+		arr = arg_into_array(argv, argc);
+	else
+		arr = mult_arg_array(argv, argc);
+	if (array_val(arr, arr_len) == 1)
+		return (ft_puterror(), free(arr), 1);
+	create_stack(&a, arr, arr_len);
 	create_stack_b(&b);
 	operations_management(&a, &b);
-	free(arr);
-	return 0;
+	return (free(arr), free_all(&a, &b), 0);
 }

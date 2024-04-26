@@ -6,15 +6,15 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:56:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 23:42:19 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 06:50:34 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-	t_stack *swap;
+	t_stack	*swap;
 
 	swap = NULL;
 	if ((*b) == NULL)
@@ -26,9 +26,9 @@ void pa(t_stack **a, t_stack **b)
 	ft_printf("pa\n");
 }
 
-void pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
-	t_stack *swap;
+	t_stack	*swap;
 
 	swap = NULL;
 	if ((*a) == NULL)

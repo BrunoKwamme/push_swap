@@ -6,16 +6,16 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:55:47 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/25 23:41:42 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:11:10 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ra(t_stack **a)
+void	ra(t_stack **a)
 {
-	t_stack *last;
-	t_stack *swap;
+	t_stack	*last;
+	t_stack	*swap;
 
 	swap = NULL;
 	last = NULL;
@@ -31,10 +31,10 @@ void ra(t_stack **a)
 	ft_printf("ra\n");
 }
 
-void rb(t_stack **b)
+void	rb(t_stack **b)
 {
-	t_stack *last;
-	t_stack *swap;
+	t_stack	*last;
+	t_stack	*swap;
 
 	swap = NULL;
 	last = NULL;

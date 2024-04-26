@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 06:34:33 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/26 16:33:01 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	*arr_cat(long *array, int arg_len, char **splitted_args)
 {
-	int	i;
-	int	new_arr_len;
+	int		i;
+	int		new_arr_len;
 	long	*new_array;
 
 	i = 0;
@@ -24,7 +24,7 @@ long	*arr_cat(long *array, int arg_len, char **splitted_args)
 		new_arr_len++;
 	new_array = ft_calloc(sizeof(long), arg_len + new_arr_len);
 	if (!new_array)
-		return(NULL);
+		return (NULL);
 	while (i < arg_len)
 	{
 		new_array[i] = array[i];
@@ -42,8 +42,8 @@ long	*arr_cat(long *array, int arg_len, char **splitted_args)
 
 long	*create_array(char **splitted_args)
 {
-	int	i;
-	int arg_len;
+	int		i;
+	int		arg_len;
 	long	*arg_arr;
 
 	arg_arr = NULL;
@@ -62,29 +62,44 @@ long	*create_array(char **splitted_args)
 	return (arg_arr);
 }
 
-void free_splitted_args(char **splitted_args)
+long	*mult_arg_array(char **argv, int argc)
 {
-	int	i;
+	int			i;
+	int			x;
+	long		*array;
 
-	i = 0;
-	while (splitted_args[i] != NULL)
+	i = 1;
+	x = 0;
+	array = ft_calloc(sizeof(long), (argc - 1));
+	while (i <= (argc - 1))
 	{
-		free(splitted_args[i]);
+		array[x] = ft_atol_mult_arg(argv[i]);
 		i++;
+		x++;
 	}
-	free(splitted_args);
+	return (array);
 }
 
-long	*arg_into_array(char	**argv, int argc)
+long	*array_management(long *arg_arr, int arg_len, char **splitted_args)
+{
+	long *arr_to_cat;
+
+	arr_to_cat = create_array(splitted_args);
+	arg_arr = arr_cat(arg_arr, arg_len, splitted_args);
+	free_splitted_args(splitted_args);
+	return (arg_arr);
+}
+
+long	*arg_into_array(char **argv, int argc)
 {
 	char	**splitted_args;
-	long		*arr_to_cat;
-	long		*arg_arr;
+	//long	*arr_to_cat;
+	long	*arg_arr;
 	int		arg_len;
 	int		i;
 
 	splitted_args = NULL;
-	arr_to_cat = NULL;
+	//arr_to_cat = NULL;
 	arg_arr = NULL;
 	arg_len = 0;
 	i = 1;
@@ -98,13 +113,12 @@ long	*arg_into_array(char	**argv, int argc)
 				arg_len++;
 		}
 		else
-		{
-			arr_to_cat = create_array(splitted_args);
+		//{
+		//	arr_to_cat = create_array(splitted_args);
 			arg_arr = arr_cat(arg_arr, arg_len, splitted_args);
-		}
+		//}
 		free_splitted_args(splitted_args);
 		i++;
 	}
 	return (arg_arr);
 }
-

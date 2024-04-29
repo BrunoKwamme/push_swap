@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:56:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 06:50:34 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:16:07 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pa(t_stack **a, t_stack **b)
 	t_stack	*swap;
 
 	swap = NULL;
-	if ((*b) == NULL)
+	if ((*b) == NULL || (*b)->i == -1)
 		return ;
 	swap = (*a);
 	*a = *b;
@@ -33,7 +33,10 @@ void	pb(t_stack **a, t_stack **b)
 	swap = NULL;
 	if ((*a) == NULL)
 		return ;
-	swap = (*b);
+	if ((*b)->i == -1)
+		free((*b));
+	else
+		swap = (*b);
 	*b = *a;
 	*a = (*a)->next;
 	(*b)->next = swap;

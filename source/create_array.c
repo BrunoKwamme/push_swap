@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 00:05:30 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 16:33:01 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:23:25 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,6 @@ long	*mult_arg_array(char **argv, int argc)
 
 long	*array_management(long *arg_arr, int arg_len, char **splitted_args)
 {
-	long *arr_to_cat;
-
-	arr_to_cat = create_array(splitted_args);
 	arg_arr = arr_cat(arg_arr, arg_len, splitted_args);
 	free_splitted_args(splitted_args);
 	return (arg_arr);
@@ -93,13 +90,11 @@ long	*array_management(long *arg_arr, int arg_len, char **splitted_args)
 long	*arg_into_array(char **argv, int argc)
 {
 	char	**splitted_args;
-	//long	*arr_to_cat;
 	long	*arg_arr;
 	int		arg_len;
 	int		i;
 
 	splitted_args = NULL;
-	//arr_to_cat = NULL;
 	arg_arr = NULL;
 	arg_len = 0;
 	i = 1;
@@ -113,10 +108,7 @@ long	*arg_into_array(char **argv, int argc)
 				arg_len++;
 		}
 		else
-		//{
-		//	arr_to_cat = create_array(splitted_args);
 			arg_arr = arr_cat(arg_arr, arg_len, splitted_args);
-		//}
 		free_splitted_args(splitted_args);
 		i++;
 	}

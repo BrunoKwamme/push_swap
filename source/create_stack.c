@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:23 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 16:36:11 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:02:37 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	create_stack_b(t_stack **b)
 	t_stack	*temp;
 
 	temp = ft_calloc(sizeof(t_stack), 1);
+	temp->i = -1;
 	(*b) = temp;
 }

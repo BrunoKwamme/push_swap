@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:49 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 14:54:16 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 12:50:01 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	three_nodes(t_stack **a)
 	if ((*a)->data > (*a)->next->data)
 		sa(a);
 	if ((*a)->data > (*a)->next->next->data)
-		ra(a);
+		rra(a);
 	if ((*a)->next->data > (*a)->next->next->data)
 	{
+		rra(a);
 		sa(a);
-		ra(a);
 	}
 }
 

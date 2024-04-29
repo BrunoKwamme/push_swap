@@ -6,12 +6,11 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:21:08 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/26 17:19:53 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:22:52 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 void	operations_management(t_stack **a, t_stack **b)
 {
@@ -70,14 +69,5 @@ int	main(int argc, char **argv)
 	create_stack(&a, arr, arr_len);
 	create_stack_b(&b);
 	operations_management(&a, &b);
-	/*
-	t_stack *temp;
-	temp = a;
-	while (temp->next)
-	{
-		ft_printf("-> %i\n", temp->data);
-		temp = temp->next;
-	}
-	*/
 	return (free(arr), free_all(&a, &b), 0);
 }

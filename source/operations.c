@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:49 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/05/02 14:55:06 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/05/16 19:49:30 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	five_nodes(t_stack **a, t_stack **b)
 	if ((*a)->data > (*a)->next->data)
 		sa(a);
 }
-/*
+
 void	more_than_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int	iter;
@@ -90,50 +90,5 @@ void	order_by_radix(t_stack **stack_a, t_stack **stack_b, int ind)
 		else
 			ra(stack_a);
 		count_a--;
-	}
-}
-
-*/
-void	more_than_five (t_stack **list_a, t_stack **list_b)
-{
-	int	begin;
-	int	bytes;
-	int	size_b;
-
-	size_b = stack_size((*list_b));
-	bytes = binary_limit(stack_size(*list_a));
-	begin = 0;
-	while (bytes > 0)
-	{
-		order_by_radix(list_a, list_b, begin);
-		bytes--;
-		begin++;
-	}
-	while (/*stack_size((*list_b))*/size_b > 0)
-		pa(list_a, list_b);
-}
-
-void	order_by_radix(t_stack **list_a, t_stack **list_b, int dif)
-{
-	int	size_a;
-	int	size_b;
-
-	size_b = stack_size((*list_b));
-	while (size_b > 0 && (*list_b)->next != NULL)
-	{
-		if ((((*list_b)->i >> dif & 1) == 1))
-			pa(list_a, list_b);
-		else
-			rb(list_b);
-		size_b--;
-	}
-	size_a = stack_size(*list_a);
-	while (size_a > 0 && (*list_a)->next != NULL)
-	{
-		if ((((*list_a)->i >> dif & 1) == 0))
-			pb(list_a, list_b);
-		else
-			ra(list_a);
-		size_a--;
 	}
 }
